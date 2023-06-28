@@ -205,3 +205,17 @@ forge geiger
 -   debugger?
 -   forge snapshot?
 -   script?
+
+# deploy 
+forge create --rpc-url "ENTER_YOUR_RPC_HERE" --mnemonic "FOR_USING_UNLOCKED_ACCOUNTS" src/Counter.sol:Counter
+
+forge create --rpc-url "https://rpc.dev.buildbear.io/unfair-taun-we-75f9829e" --mnemonic "picture length bitter bid lizard bid custom fork resource evidence dress cup" src/Counter.sol:Counter
+
+# verfiy
+ETHERSCAN_API_KEY="verifyContract" forge verify-contract --chain-id ENTER_CHAIN_ID --constructor-args "ENTER_ARGS" --verifier-url "https://rpc.buildbear.io/verify/etherscan/ENTER_TESTNET_NAME" CONTRACT_ADDRESS src/Counter.sol:Counter
+
+ETHERSCAN_API_KEY="verifyContract" forge verify-contract --chain-id 1 --verifier-url "https://rpc.buildbear.io/verify/etherscan/unfair-taun-we-75f9829e" 0xfad47B8F3524923Cf2c9D64923A91fA9ae137954 src/Counter.sol:Counter
+
+# testing 
+
+forge test --fork-url https://eth.llamarpc.com --ffi
